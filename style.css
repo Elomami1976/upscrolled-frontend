@@ -485,6 +485,8 @@ main {
     font-weight: 700;
     margin-bottom: 1rem;
     letter-spacing: 0.5px;
+    display: block;
+    width: 100%;
 }
 
 /* FAQ Section */
