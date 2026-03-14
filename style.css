@@ -418,6 +418,67 @@ main {
     border: 1px solid var(--text-color);
 }
 
+/* Testimonials Section */
+.testimonials-section {
+    padding: 4rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    padding: 2rem;
+    border: 1px solid var(--text-color);
+    text-align: center;
+}
+
+.testimonial-stars {
+    color: #FFD700;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.testimonial-text {
+    font-size: 0.95rem;
+    font-style: italic;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.author-name {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.author-location {
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
+
+/* Section Tagline */
+.section-tagline {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
 /* FAQ Section */
 .faq-section {
     padding: 4rem 0;
