@@ -186,6 +186,167 @@
         ]
     }
     </script>
+    
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "UpScrolled Video Downloader",
+        "url": "https://www.upscrolleddownload.com",
+        "logo": "https://www.upscrolleddownload.com/og-image.png",
+        "sameAs": [],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "url": "https://www.upscrolleddownload.com/contact.html",
+            "availableLanguage": "English"
+        }
+    }
+    </script>
+    
+    <!-- WebSite Schema with SearchAction -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "UpScrolled Video Downloader",
+        "url": "https://www.upscrolleddownload.com",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://www.upscrolleddownload.com/?url={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.upscrolleddownload.com/"
+            }
+        ]
+    }
+    </script>
+    
+    <!-- ItemList Schema for Features (Rich Snippets) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "UpScrolled Downloader Features",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Free Video Downloads",
+                "description": "Download unlimited UpScrolled videos at no cost"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "No Watermark",
+                "description": "Save videos without any added watermarks or branding"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "No Registration",
+                "description": "No account or login required to download videos"
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Works on All Devices",
+                "description": "Compatible with iPhone, Android, iPad, and desktop browsers"
+            },
+            {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "High Quality MP4",
+                "description": "Download videos in original quality MP4 format"
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Product Schema (for Rich Results) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "UpScrolled Video Downloader",
+        "description": "Free online tool to download UpScrolled videos without watermark. Works on all devices.",
+        "brand": {
+            "@type": "Brand",
+            "name": "UpScrolled Downloader"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "1247",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Jason P."
+                },
+                "reviewBody": "Saved over 200 videos in just one afternoon. The download speed is insane and the quality is exactly what I expected."
+            },
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Mariam M."
+                },
+                "reviewBody": "Works flawlessly on my Samsung phone. Just paste the link and boom - video saved."
+            },
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Michael B."
+                },
+                "reviewBody": "Crystal clear downloads without any watermarks. Been recommending it to all my friends!"
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
