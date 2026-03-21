@@ -856,3 +856,137 @@ main {
         gap: 1rem;
     }
 }
+
+/* Blog Styles */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.blog-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.blog-card-content {
+    padding: 2rem;
+}
+
+.blog-category {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.7;
+    margin-bottom: 0.75rem;
+}
+
+.blog-card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.blog-card h2 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.blog-card h2 a:hover {
+    text-decoration: underline;
+}
+
+.blog-card p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.blog-meta {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    opacity: 0.6;
+    margin-bottom: 1.5rem;
+}
+
+.blog-cta {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    margin-top: 2rem;
+}
+
+.blog-cta h2 {
+    margin-bottom: 1rem;
+}
+
+.blog-cta p {
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+}
+
+/* Article Styles */
+.breadcrumb {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 1rem;
+}
+
+.breadcrumb a {
+    color: inherit;
+}
+
+.cta-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.cta-box h3 {
+    margin-bottom: 0.75rem;
+}
+
+.cta-box p {
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+}
+
+.article-meta {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.article-meta p {
+    margin-bottom: 0.5rem;
+}
+
+.article-meta a {
+    color: inherit;
+}
+
+code {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+}
