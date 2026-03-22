@@ -22,11 +22,13 @@
     const errorMessage = document.getElementById('errorMessage');
     const errorText = document.getElementById('errorText');
     const downloadMp4Btn = document.getElementById('downloadMp4Btn');
+    const downloadMp3Btn = document.getElementById('downloadMp3Btn');
     const resetBtn = document.getElementById('resetBtn');
     const tryAgainBtn = document.getElementById('tryAgainBtn');
 
     // State
     let currentDownloadUrl = null;
+    let currentVideoPageUrl = null;
 
     // Initialize only on pages with the download form
     if (!downloadForm) {
@@ -42,6 +44,10 @@
     
     if (downloadMp4Btn) {
         downloadMp4Btn.addEventListener('click', handleDownloadMp4);
+    }
+
+    if (downloadMp3Btn) {
+        downloadMp3Btn.addEventListener('click', handleDownloadMp3);
     }
     
     if (resetBtn) {
@@ -91,6 +97,7 @@
 
         // Show loading state
         showLoading();
+        currentVideoPageUrl = url;
 
         try {
             // Make API request
@@ -202,6 +209,44 @@
     }
 
     /**
+     * Handle MP3 download button click
+     */
+    async function handleDownloadMp3() {
+        if (!currentVideoPageUrl) return;
+
+        downloadMp3Btn.disabled = true;
+        downloadMp3Btn.textContent = 'Extracting audio...';
+
+        try {
+            const response = await fetch(`${API_BASE_URL}/download-audio`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ url: currentVideoPageUrl }),
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({}));
+                throw new Error(errorData.detail || getErrorMessage(response.status));
+            }
+
+            const blob = await response.blob();
+            const audioUrl = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = audioUrl;
+            link.download = `upscrolled-audio-${Date.now()}.mp3`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(audioUrl);
+        } catch (error) {
+            alert('MP3 extraction failed: ' + error.message);
+        } finally {
+            downloadMp3Btn.disabled = false;
+            downloadMp3Btn.textContent = 'Download MP3';
+        }
+    }
+
+    /**
      * Reset form to initial state
      */
     function resetForm() {
@@ -210,6 +255,7 @@
             URL.revokeObjectURL(currentDownloadUrl);
             currentDownloadUrl = null;
         }
+        currentVideoPageUrl = null;
 
         // Reset form elements
         videoUrlInput.value = '';
