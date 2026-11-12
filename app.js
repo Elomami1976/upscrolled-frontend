@@ -11,7 +11,8 @@
     const API_BASE_URL = window.location.hostname === 'localhost' 
         ? '/api' 
         : 'https://upscrolled-backend-production.up.railway.app/api';
-    const UPSCROLLED_URL_PATTERN = /^https:\/\/share\.upscrolled\.com\/[a-z]{2}\/post\/[\w-]+\/?$/i;
+    // Accepts share.upscrolled.com/en/post/<id> and upscrolled.com/@user/<id>
+    const UPSCROLLED_URL_PATTERN = /^https:\/\/(?:share\.upscrolled\.com\/[a-z]{2}\/post\/[\w-]+|(?:www\.)?upscrolled\.com\/@[\w.-]+\/[\w-]+)\/?(?:[?#].*)?$/i;
 
     // DOM Elements
     const downloadForm = document.getElementById('downloadForm');
