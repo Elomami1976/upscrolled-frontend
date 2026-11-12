@@ -990,3 +990,14 @@ code {
     font-family: monospace;
     font-size: 0.9em;
 }
+
+/* Ad slots (Adsterra) */
+.ad-slot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    max-width: 100%;
+    overflow: hidden;
+}
+.ad-slot:empty { margin: 0; }
