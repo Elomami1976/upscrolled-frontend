@@ -372,22 +372,25 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="container">
-                <h1>Download UpScrolled Videos Free</h1>
+                <h1>Download <span>UpScrolled</span> Videos Free</h1>
                 <p class="hero-subtitle">Paste any UpScrolled share link and download the video instantly to your device. No login, no app, no watermark.</p>
                 
                 <!-- Download Form -->
                 <div class="download-form">
                     <form id="downloadForm" class="input-group">
-                        <input 
-                            type="url" 
-                            id="videoUrl" 
-                            class="input-field" 
-                            placeholder="Paste your UpScrolled link here..."
-                            autocomplete="off"
-                            required
-                            aria-label="UpScrolled video URL"
-                        >
-                        <button type="submit" id="downloadBtn" class="btn btn-primary btn-block" disabled>
+                        <div class="input-wrap">
+                            <input 
+                                type="url" 
+                                id="videoUrl" 
+                                class="input-field" 
+                                placeholder="Paste your UpScrolled link here..."
+                                autocomplete="off"
+                                required
+                                aria-label="UpScrolled video URL"
+                            >
+                            <button type="button" id="pasteBtn" class="paste-btn" aria-label="Paste link from clipboard" hidden>Paste</button>
+                        </div>
+                        <button type="submit" id="downloadBtn" class="btn btn-primary btn-block">
                             Download Video
                         </button>
                     </form>

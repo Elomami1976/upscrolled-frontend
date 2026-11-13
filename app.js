@@ -64,7 +64,28 @@
      */
     function handleInputChange() {
         const url = videoUrlInput.value.trim();
-        downloadBtn.disabled = !isValidUrl(url);
+        // Button stays clickable; an invalid link shows an error on submit.
+        downloadBtn.classList.toggle('is-ready', isValidUrl(url));
+    }
+
+    // Paste button: fills the input from the clipboard (where supported)
+    const pasteBtn = document.getElementById('pasteBtn');
+    if (pasteBtn && navigator.clipboard && navigator.clipboard.readText) {
+        pasteBtn.hidden = false;
+        pasteBtn.addEventListener('click', async () => {
+            try {
+                const text = (await navigator.clipboard.readText()).trim();
+                if (text) {
+                    videoUrlInput.value = text;
+                    handleInputChange();
+                    if (isValidUrl(text)) {
+                        downloadBtn.focus();
+                    }
+                }
+            } catch (err) {
+                videoUrlInput.focus();
+            }
+        });
     }
 
     /**
@@ -261,7 +282,8 @@
         // Reset form elements
         videoUrlInput.value = '';
         videoUrlInput.disabled = false;
-        downloadBtn.disabled = true;
+        downloadBtn.disabled = false;
+        downloadBtn.classList.remove('is-ready');
         
         // Hide all status messages
         progressContainer.classList.remove('active');

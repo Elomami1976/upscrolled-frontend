@@ -1001,3 +1001,126 @@ code {
     overflow: hidden;
 }
 .ad-slot:empty { margin: 0; }
+
+/* ==========================================================================
+   Design refresh: accent colour + hero download box
+   ========================================================================== */
+:root {
+    --accent: #8b5cf6;
+    --accent-2: #ec4899;
+    --accent-gradient: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+    --surface: #111114;
+    --surface-border: rgba(255, 255, 255, 0.12);
+    --radius: 14px;
+}
+
+a:hover { opacity: 1; color: #c4b5fd; }
+
+/* Hero: soft glow behind the download box */
+.hero {
+    position: relative;
+    padding: 5rem 0 4rem;
+    background:
+        radial-gradient(60% 55% at 50% 0%, rgba(139, 92, 246, 0.28) 0%, rgba(0, 0, 0, 0) 70%),
+        radial-gradient(40% 40% at 85% 30%, rgba(236, 72, 153, 0.14) 0%, rgba(0, 0, 0, 0) 70%);
+}
+.hero h1 span,
+.text-gradient {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.hero-subtitle { opacity: 0.8; margin-bottom: 2.5rem; }
+
+/* Download card */
+.download-form {
+    max-width: 640px;
+    padding: 1.5rem;
+    border: 1px solid var(--surface-border);
+    border-radius: 20px;
+    background: rgba(17, 17, 20, 0.85);
+    box-shadow: 0 20px 60px rgba(139, 92, 246, 0.18);
+    backdrop-filter: blur(8px);
+}
+.input-group { gap: 0.875rem; }
+
+/* Input with built-in Paste button */
+.input-wrap { position: relative; }
+.input-field {
+    padding: 1.1rem 6rem 1.1rem 1.25rem;
+    font-size: 1.05rem;
+    background: #0a0a0c;
+    border: 1.5px solid var(--surface-border);
+    border-radius: var(--radius);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.input-field:focus {
+    border-width: 1.5px;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.25);
+}
+.paste-btn {
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+    transform: translateY(-50%);
+    padding: 0.55rem 1rem;
+    font: 600 0.9rem var(--font-family);
+    color: #fff;
+    background: rgba(139, 92, 246, 0.18);
+    border: 1px solid rgba(139, 92, 246, 0.5);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+.paste-btn:hover { background: rgba(139, 92, 246, 0.35); }
+.paste-btn[hidden] { display: none; }
+
+/* Buttons */
+.btn { border-radius: var(--radius); }
+.btn-primary {
+    color: #fff;
+    background: var(--accent-gradient);
+    border: none;
+    padding: calc(1rem + 2px) 2rem;
+    box-shadow: 0 8px 24px rgba(139, 92, 246, 0.35);
+}
+.btn-primary:hover:not(:disabled) {
+    color: #fff;
+    background: var(--accent-gradient);
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 30px rgba(139, 92, 246, 0.45);
+}
+.btn-primary.is-ready { box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.35), 0 12px 30px rgba(139, 92, 246, 0.5); }
+.btn-primary:disabled { opacity: 0.6; filter: saturate(0.6); }
+#downloadBtn { font-size: 1.1rem; }
+.btn-outline {
+    border: 1.5px solid var(--surface-border);
+}
+.btn-outline:hover {
+    background: rgba(139, 92, 246, 0.15);
+    border-color: var(--accent);
+    color: #fff;
+}
+
+/* Progress + result */
+.progress-bar { height: 6px; border-radius: 999px; background: rgba(255, 255, 255, 0.1); }
+.progress-bar-fill { background: var(--accent-gradient); border-radius: 999px; }
+.status-message { border-radius: var(--radius); padding: 1.25rem; }
+.status-message.success {
+    border: 1px solid rgba(139, 92, 246, 0.5);
+    background: rgba(139, 92, 246, 0.08);
+}
+.status-message.error {
+    border: 1px solid rgba(248, 113, 113, 0.5);
+    background: rgba(248, 113, 113, 0.08);
+}
+.status-message .btn { margin: 0.25rem; }
+
+@media (max-width: 600px) {
+    .hero { padding: 3rem 0 2.5rem; }
+    .download-form { padding: 1rem; border-radius: 16px; }
+    .input-field { font-size: 1rem; }
+}
