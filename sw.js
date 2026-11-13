@@ -3,7 +3,7 @@
  * Provides offline caching for static assets
  */
 
-const CACHE_NAME = 'upscrolled-downloader-v3';
+const CACHE_NAME = 'upscrolled-downloader-v4';
 const STATIC_ASSETS = [
     '/',
     '/index.html',

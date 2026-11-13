@@ -1124,3 +1124,114 @@ a:hover { opacity: 1; color: #c4b5fd; }
     .download-form { padding: 1rem; border-radius: 16px; }
     .input-field { font-size: 1rem; }
 }
+
+/* ==========================================================================
+   Design refresh 2: spacing, cards, section rhythm
+   ========================================================================== */
+
+/* Tighter vertical rhythm */
+.how-it-works,
+.testimonials-section,
+.faq-section { padding: 3.5rem 0; border-top: none; }
+.trust-section { padding: 2rem 0; border-top: none; }
+.content-section { padding: 2.5rem 0; }
+.section-title { margin-bottom: 2rem; }
+.ad-slot { margin: 1.25rem auto; }
+.ad-slot:empty { display: none; }
+
+/* Alternate section backgrounds so the page reads as separate blocks */
+.how-it-works,
+#mobile-download,
+.testimonials-section {
+    background: #0b0b0e;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Step cards */
+.steps-grid { gap: 1.25rem; }
+.step-card {
+    position: relative;
+    padding: 2rem 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: 18px;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.step-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(139, 92, 246, 0.5);
+    box-shadow: 0 14px 40px rgba(139, 92, 246, 0.15);
+}
+.step-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+    border-radius: 16px;
+    background: rgba(139, 92, 246, 0.14);
+}
+.step-icon svg { color: #c4b5fd; }
+.step-number {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 999px;
+    background: var(--accent-gradient);
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+/* Trust badges as pills */
+.trust-badges { gap: 0.75rem; }
+.trust-badge {
+    padding: 0.55rem 1.1rem;
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    border-radius: 999px;
+    background: rgba(139, 92, 246, 0.08);
+}
+.trust-badge::before { content: "\2713  "; color: #c4b5fd; font-weight: 700; }
+
+/* Feature items */
+.feature-item {
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-left: 3px solid var(--accent);
+    border-radius: 12px;
+}
+
+/* Testimonials */
+.testimonial-card {
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: 18px;
+    min-height: 0;
+}
+.testimonial-stars { color: #fbbf24; }
+
+/* FAQ as cards */
+.faq-list { display: grid; gap: 0.75rem; }
+.faq-item {
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: 14px;
+    padding: 0 1.25rem;
+    transition: border-color 0.2s ease;
+}
+.faq-item.active { border-color: rgba(139, 92, 246, 0.5); }
+.faq-question { padding: 1.15rem 0; }
+.faq-question:hover { opacity: 1; color: #c4b5fd; }
+.faq-icon { color: #c4b5fd; }
+.faq-item.active .faq-answer { padding-bottom: 1.15rem; }
+
+/* Blog cards */
+.blog-card { background: var(--surface); border-color: var(--surface-border); border-radius: 18px; }
+.blog-card:hover { border-color: rgba(139, 92, 246, 0.5); box-shadow: 0 14px 40px rgba(139, 92, 246, 0.15); }
+
+@media (max-width: 700px) {
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .how-it-works, .testimonials-section, .faq-section { padding: 2.5rem 0; }
+}
