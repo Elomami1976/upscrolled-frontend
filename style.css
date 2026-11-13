@@ -1258,3 +1258,6 @@ a:hover { opacity: 1; color: #c4b5fd; }
 .compare-table tbody tr:last-child th, .compare-table tbody tr:last-child td { border-bottom: none; }
 .compare-table a { color: #c4b5fd; text-decoration: underline; }
 @media (max-width: 600px) { .toc-box ol { columns: 1; } }
+
+/* Blog: sources note */
+.article-note { font-size: 0.9rem; opacity: 0.7; margin-top: 1.5rem; }
