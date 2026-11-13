@@ -1235,3 +1235,26 @@ a:hover { opacity: 1; color: #c4b5fd; }
     .testimonials-grid { grid-template-columns: 1fr; }
     .how-it-works, .testimonials-section, .faq-section { padding: 2.5rem 0; }
 }
+
+/* Blog: table of contents + comparison table */
+.toc-box {
+    margin: 2rem 0;
+    padding: 1.25rem 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-left: 3px solid var(--accent);
+    border-radius: 12px;
+}
+.toc-box p { margin-bottom: 0.5rem; }
+.toc-box ol { margin: 0 0 0 1.25rem; columns: 2; column-gap: 2rem; }
+.toc-box li { margin-bottom: 0.3rem; break-inside: avoid; }
+.toc-box a { color: #c4b5fd; }
+.table-scroll { overflow-x: auto; margin: 1.5rem 0 2rem; border-radius: 12px; border: 1px solid var(--surface-border); }
+.compare-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; min-width: 560px; }
+.compare-table th, .compare-table td { padding: 0.85rem 1rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--surface-border); }
+.compare-table thead th { background: rgba(139, 92, 246, 0.14); font-weight: 700; }
+.compare-table tbody th { width: 22%; color: #c4b5fd; font-weight: 600; }
+.compare-table tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+.compare-table tbody tr:last-child th, .compare-table tbody tr:last-child td { border-bottom: none; }
+.compare-table a { color: #c4b5fd; text-decoration: underline; }
+@media (max-width: 600px) { .toc-box ol { columns: 1; } }
